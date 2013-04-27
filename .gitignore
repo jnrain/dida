@@ -40,3 +40,6 @@ pip-log.txt
 # Eric4
 *.e4p
 .eric4project
+
+# Configuration
+conf.json
