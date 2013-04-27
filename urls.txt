@@ -1,0 +1,11 @@
+--regex
+--renderer=mako
+
+^/static/:
+    --regex
+    ^(?P<path>.*)$ staticfile null
+
+^/socket.io socketio-handler null
+
+^/$ index
+"" 404

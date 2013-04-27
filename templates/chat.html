@@ -1,0 +1,42 @@
+## -*- coding: utf-8 -*-
+<!DOCTYPE html>
+<html lang="zh-cmn">
+  <head>
+    <meta charset="utf-8" />
+    <title>滴答聊天广场</title>
+    <link href="static/css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="static/js/jquery-1.6.1.min.js"></script>
+    <script type="text/javascript" src="static/js/socket.io.js"></script>
+    <script>    
+WEB_SOCKET_SWF_LOCATION = "/static/WebSocketMain.swf";
+WEB_SOCKET_DEBUG = true;
+    </script>
+    <script type="text/javascript" src="static/js/chat.js"></script>
+  </head>
+<body>
+  <div id="chat">
+    <div id="nickname">
+      <form id="set-nickname" class="wrap">
+        <p>输入你的听雨帐号密码来登陆</p>
+        <input id="username">
+        <input id="passwd" type="password">
+        <input type="submit" value="进入广场">
+        <p id="login-err" class="errmsg">用户名或密码错误</p>
+        <p id="duplogin-err" class="errmsg">您已经登陆过</p>
+    </form>
+    </div>
+    <div id="connecting">
+      <div class="wrap">正在连接到服务器</div>
+    </div>
+    <div id="messages">
+      <div id="nicknames"><span>在线:</span></div>
+      <div id="lines"></div>
+    </div>
+    <form id="send-message" autocomplete="off">
+      <input id="message" autocomplete="off">
+      <button>发送</button>
+    </form>
+  </div>
+</body>
+<!-- vim:set ai et ts=2 sw=2 sts=2 fenc=utf-8 syn=mako: -->
+</html>
