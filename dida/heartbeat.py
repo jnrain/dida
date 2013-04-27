@@ -26,7 +26,7 @@ import threading
 from .state import getstate
 from .log import d, e
 
-HEARTBEAT_TIMEOUT = 3
+CHECK_INTERVAL, HEARTBEAT_TIMEOUT = 3, 30
 
 
 def heartbeat_cleaner(ns):
@@ -34,7 +34,7 @@ def heartbeat_cleaner(ns):
     state = getstate()
 
     while not state['close_evt'].is_set():
-        time.sleep(HEARTBEAT_TIMEOUT)
+        time.sleep(CHECK_INTERVAL)
 
         curtime = time.time()
         freshnesses, nicknames = state['freshnesses'], state['nicknames']
